@@ -26,7 +26,7 @@ export const Reducer = (state = initialState, action) => {
                     if (el.id === action.payload) {
                         if (el.quantity > 1) {
                             return {
-                                ...el, quality: el.quality - 1
+                                ...el, quantity: el.quantity - 1
                             }
                         } else {
                             return el
@@ -50,10 +50,6 @@ export const Reducer = (state = initialState, action) => {
             } else {
                 return {...state, favorite: [...state.favorite, {...action.payload,isLiked:true}]}
             }
-
-        //
-        // case 'ADD_TO_FAVORITE':
-        //     return {...state,favorite: [...state.favorite,action.payload]}
         default:
             return state
     }
